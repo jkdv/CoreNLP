@@ -44,7 +44,7 @@ public class StanfordCoreNLPServer implements Runnable {
   @ArgumentParser.Option(name="port", gloss="The port to run the server on")
   protected int serverPort = 9000;
   @ArgumentParser.Option(name="timeout", gloss="The default timeout, in milliseconds")
-  protected int timeoutMilliseconds = 15000;
+  protected int timeoutMilliseconds = Integer.MAX_VALUE;
   @ArgumentParser.Option(name="strict", gloss="If true, obey strict HTTP standards (e.g., with encoding)")
   protected boolean strict = false;
   @ArgumentParser.Option(name="quiet", gloss="If true, don't print to stdout")
@@ -54,7 +54,7 @@ public class StanfordCoreNLPServer implements Runnable {
 
   protected final String shutdownKey;
 
-  public static int MAX_CHAR_LENGTH = 100000;
+  public static int MAX_CHAR_LENGTH = Integer.MAX_VALUE;
   public final Properties defaultProps;
 
   /**
